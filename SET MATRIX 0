@@ -1,0 +1,33 @@
+class Solution {
+public:
+    void setZeroes(vector<vector<int>>& matrix) {
+       set<int>mp;
+        int row =  matrix.size();
+int cols = matrix[0].size(); 
+       for(int i=0;i<row;i++){
+           for(int j=0;j<cols;j++){
+               if(matrix[i][j]==0){
+                   rows[i]=0;
+                   columns[j]=0;
+               }
+           }
+       }
+      for(auto x:rows){
+          cout<<x.first<<" "<<x.second<<endl;
+          int rw=x.first;
+          for(int i=0;i<cols;i++){
+              matrix[rw][i]=0;
+          }
+      }
+       for(auto y:columns){
+          cout<<y.first<<" "<<y.second<<endl;
+          int col1=y.first;
+          for(int i=0;i<row;i++){
+              matrix[i][col1]=0;
+          }
+      }
+      
+
+      // cout<<row<<cols;
+    }
+};
