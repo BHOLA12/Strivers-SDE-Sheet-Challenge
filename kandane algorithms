@@ -1,0 +1,90 @@
+
+//kadane Algorithms
+long long maxSubarraySum(int arr[], int n)
+{
+    /*
+        Don't write main().
+        Don't read input, it is passed as function argument.    
+        No need to print anything.
+        Taking input and printing output is handled automatically.
+    */
+    int  consum=0;
+    int res=INT_MIN;
+    for(int i=0;i<n;i++){
+        consum=max(arr[i],consum+arr[i]);
+        res=max(res,consum);
+    }
+     if(res<0){
+        res=0;
+    }
+    return res;
+   
+}
+
+
+
+
+QUESTION 2 SORT AN ARRAY OF 0,1,2;
+
+//optimsed code
+//SORT    an array of 0's,1's and 2's^_____^
+
+
+
+
+
+
+
+
+ void sortColors(vector<int>& nums) {
+       int strt=0;
+       int endl=nums.size()-1;
+       
+       //first sort 1
+       while(strt<endl){
+           if(nums[strt]==0){
+               strt++;
+           }
+           else{
+               if(nums[strt]!=0&&nums[endl]==0){
+                   swap(nums[strt],nums[endl]);
+                   endl--;
+                   strt++;
+               }
+               else{
+                   endl--;
+               }
+           }
+       }
+
+//move 1 own in right place
+endl=nums.size()-1;
+while(nums[strt]==0&&strt<endl){
+    strt++;
+}
+
+ while(strt<endl){
+    if(nums[strt]==1){
+        strt++;
+    }
+    else{
+        if(nums[strt]!=1&&nums[endl]==1){
+            swap(nums[strt],nums[endl]);
+            endl--;
+            strt++;
+        }
+        else{
+           endl--; 
+        }
+    }
+}
+
+    }
+};
+
+https://takeuforward.org/data-structure/stock-buy-and-sell/
+
+// NEW QUESTION STOCK BUY AND SELL
+
+
+
