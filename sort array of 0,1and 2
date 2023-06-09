@@ -1,0 +1,46 @@
+//code is here
+#include <bits/stdc++.h> 
+void sort012(int *nums, int n)
+{
+   //   Write your code here
+    int strt=0;
+       int endl=n-1;
+       
+       //first sort 1
+       while(strt<endl){
+           if(nums[strt]==0){
+               strt++;
+           }
+           else{
+               if(nums[strt]!=0&&nums[endl]==0){
+                   swap(nums[strt],nums[endl]);
+                   endl--;
+                   strt++;
+               }
+               else{
+                   endl--;
+               }
+           }
+       }
+
+//move 1 own in right place
+endl=n-1;
+while(nums[strt]==0&&strt<endl){
+    strt++;
+}
+while(strt<endl){
+    if(nums[strt]==1){
+        strt++;
+    }
+    else{
+        if(nums[strt]!=1&&nums[endl]==1){
+            swap(nums[strt],nums[endl]);
+            endl--;
+            strt++;
+        }
+        else{
+           endl--; 
+        }
+    }
+}
+}
